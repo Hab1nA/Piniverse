@@ -1,0 +1,14 @@
+# ZCode / mimosa 插件的本地会话状态缓存
+.mimosa/
+
+# 操作系统杂项
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# 编辑器
+.vscode/
+.idea/
+
+# ZCode 会话本地状态
+.zcode/
