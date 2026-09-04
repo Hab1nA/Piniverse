@@ -1,0 +1,21 @@
+{
+  "name": "pv",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Piniverse launcher CLI (Form B): spawn peer `pi --mode rpc` sessions with a shared environment (docs/11 §3).",
+  "bin": {
+    "pv": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "clean": "tsc -b --clean"
+  },
+  "dependencies": {
+    "pv-core": "*",
+    "pv-ext": "*"
+  }
+}

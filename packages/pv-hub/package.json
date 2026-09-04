@@ -1,0 +1,26 @@
+{
+  "name": "pv-hub",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Optional sidecar observer: network map, budget dashboard, operator console. NEVER on the message path (docs/02 §2/§5, Q11).",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "clean": "tsc -b --clean",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "pv-core": "*"
+  }
+}

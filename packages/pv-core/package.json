@@ -1,0 +1,22 @@
+{
+  "name": "pv-core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Piniverse pure protocol/core library: envelope, mailbox, registry, contract FSM, replay. No Pi dependency, no LLM prompts (docs/02 §2).",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "clean": "tsc -b --clean"
+  }
+}

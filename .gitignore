@@ -12,3 +12,24 @@ Desktop.ini
 
 # ZCode 会话本地状态
 .zcode/
+
+# 其他本机工具的本地状态（与 Piniverse 无关）
+.video_agent/
+.v2c/
+
+# Node / TypeScript
+node_modules/
+dist/
+*.tsbuildinfo
+npm-debug.log*
+.vitest/
+
+# Piniverse 运行期状态（目录结构由 .gitkeep 保留）
+# 设计依据 docs/02 §3、docs/08 §5：
+# - config/policy.json 纳入版本（人类制定的策略）
+# - audit/ 审计日志建议纳入版本（追加式文本、可 diff，P8）
+# - registry 分片 / mailboxes 信箱 / contracts 物化缓存均为运行期产物，可由审计重放重建
+.piniverse/registry/*.json
+.piniverse/contracts/active.json
+.piniverse/mailboxes/**
+!.piniverse/mailboxes/.gitkeep

@@ -1,0 +1,25 @@
+{
+  "name": "pv-ext",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Piniverse Pi extension: one loaded per peer session — messaging tools, inbox injection, heartbeat, policy hooks, state card (docs/02 §2, docs/11 §4).",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "clean": "tsc -b --clean"
+  },
+  "dependencies": {
+    "pv-core": "*"
+  }
+}

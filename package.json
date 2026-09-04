@@ -1,0 +1,26 @@
+{
+  "name": "piniverse",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A network of peer Pi sessions: cross-session messages as the only coordination primitive.",
+  "license": "UNLICENSED",
+  "workspaces": [
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "build:force": "tsc -b --force",
+    "clean": "tsc -b --clean",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "@types/node": "^26.4.1",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.0"
+  }
+}

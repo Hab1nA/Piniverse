@@ -1,0 +1,23 @@
+{
+  "v": 1,
+  "defaults": {
+    "max_depth": 4,
+    "budget_cap": { "tokens": 500000, "cost": 5.0 },
+    "send_rate_per_min": 30,
+    "broadcast_rate_per_min": 2,
+    "broadcast_mode": "topics-only",
+    "message_body_max_bytes": 8192,
+    "auto_fail_on_budget": true,
+    "sandbox_required": false,
+    "request_ttl_default_seconds": 3600,
+    "stale_offline_seconds": 90,
+    "shard_retention_days": 7
+  },
+  "roles": {
+    "operator": {
+      "can": ["freeze", "halt", "cancel_any", "policy_write", "depth_exempt", "read_all"]
+    },
+    "peer": {}
+  },
+  "overrides": {}
+}

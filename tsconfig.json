@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "files": [],
+  "references": [
+    { "path": "packages/pv-core" },
+    { "path": "packages/pv-ext" },
+    { "path": "packages/pv-hub" },
+    { "path": "packages/pv" }
+  ]
+}

@@ -30,8 +30,28 @@ Piniverse 基于 [Pi](https://github.com/earendil-works/pi)（`@earendil-works/p
 
 **阅读路径**：快速理解 → 00 → 01 → 09；深入设计 → 02 → 03 → 04 → 05 → 06 → 07 → 08；评审与落地 → 10 → 11 → open-questions。
 
+## 工程结构
+
+单仓四包（npm workspaces + TypeScript project references，施工图见 [11 · 实现路线](docs/11-implementation.md)）：
+
+```text
+packages/
+├── pv-core/   # 纯逻辑库：信封/信箱/注册表/契约 FSM/重放（不依赖 Pi）
+├── pv-ext/    # Pi 扩展：每会话一份，消息工具、注入、心跳、策略钩子
+├── pv-hub/    # 可选旁路观察者（M3，永不在消息路径上）
+└── pv/        # 启动器 CLI（Form B）
+.piniverse/    # 运行期状态域：registry/contracts/mailboxes/audit/config
+```
+
+```bash
+npm install && npm run build   # 构建
+npm test                       # 单元测试
+```
+
+开发约定见 [AGENTS.md](AGENTS.md)，实现期决策记录于 `docs/adr/`。
+
 ## 当前状态
 
-**M0 · 设计阶段**（2026-08-29）：文档体系 v0.1 完成，尚无代码。下一步是 M1（两会话通信）——施工图见 [11 · 实现路线](docs/11-implementation.md)。
+**M1 · 开工准备**（2026-09-04）：M0 文档体系 v0.1 完成；工程骨架已初始化（四包 + `.piniverse/` 布局 + 默认 policy + 构建/测试链路），pv-core 已落地协议类型，逻辑实现待填。下一步是 M1（两会话通信）——施工图见 [11 · 实现路线](docs/11-implementation.md)。
 
 文档为草案（Draft v0.1），关键机制均按"推荐方案 / 备选与权衡 / 开放问题"的格式撰写；未收敛的判断集中在 [open-questions](docs/open-questions.md)，实现阶段的决策将以轻量 ADR 记录。
